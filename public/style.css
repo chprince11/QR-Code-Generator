@@ -4,6 +4,9 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   letter-spacing: 0.9px;
+  border: none;
+  outline: none;
+  text-decoration: none;
 }
 
 body {
@@ -53,10 +56,10 @@ input[type="text"] {
   padding: 25px;
   font-size: 18px;
   width: 100%;
-  border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
   transition: border-color 0.3s;
+  caret-color: blue;
 }
 
 input[type="text"]:focus {
