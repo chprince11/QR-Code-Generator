@@ -4,9 +4,6 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   letter-spacing: 0.9px;
-  border: none;
-  outline: none;
-  text-decoration: none;
 }
 
 body {
@@ -14,14 +11,14 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-image: linear-gradient(
+  min-height: 100vh;
+  background: linear-gradient(
     to left bottom,
     #6bd18c,
     #00cdb3,
     #00c6da,
-    #00b9f6,
-    #1da7ff,
+    #00b9f6c8,
+    #1da8ffcd,
     #7d9afb,
     #b389e9,
     #d879cd,
@@ -30,6 +27,21 @@ body {
     #ff777a,
     #fb835f
   );
+  background-size: 400% 400%;
+  animation: gradientBackground 8s ease infinite;
+  padding: 20px;
+}
+
+@keyframes gradientBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 h1 {
@@ -46,6 +58,7 @@ form {
   flex-direction: column;
   align-items: center;
   width: 100%;
+  max-width: 600px;
   padding: 0 20px;
   box-sizing: border-box;
 }
@@ -53,17 +66,19 @@ form {
 input[type="text"] {
   outline: none;
   text-decoration: none;
-  padding: 25px;
+  padding: 15px;
   font-size: 18px;
   width: 100%;
   border-radius: 4px;
   box-sizing: border-box;
-  transition: border-color 0.3s;
-  caret-color: blue;
+  transition: box-shadow 0.3s;
+  caret-color: #007bff;
+  border: 1px solid transparent;
+  margin-bottom: 20px;
 }
 
 input[type="text"]:focus {
-  border: 1px solid #007bff;
+  box-shadow: 0 0 0 2px #007bff;
 }
 
 input[type="text"]::placeholder {
@@ -72,16 +87,16 @@ input[type="text"]::placeholder {
 }
 
 button {
-  padding: 10px 20px;
+  padding: 15px 20px;
   font-size: 16px;
   color: #fff;
   background-color: #007bff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  margin-top: 45px;
-  width: 40%;
-  padding: 20px;
+  width: 100%;
+  max-width: 300px;
+  margin-top: 20px;
 }
 
 button:hover {
@@ -94,6 +109,7 @@ button:hover {
   align-items: center;
   width: 100%;
   height: 100%;
+  margin-top: 20px;
 }
 
 #qrCode {
@@ -115,5 +131,44 @@ button:hover {
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+/* Media Queries for Responsive Design */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  input[type="text"] {
+    padding: 15px;
+    font-size: 16px;
+  }
+
+  button {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  input[type="text"] {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  button {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+
+  #qrCode {
+    max-width: 200px;
+    max-height: 200px;
   }
 }
