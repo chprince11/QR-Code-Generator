@@ -3,6 +3,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  letter-spacing: 0.9px;
 }
 
 body {
@@ -11,13 +12,30 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f4f4f4;
+  background-image: linear-gradient(
+    to left bottom,
+    #6bd18c,
+    #00cdb3,
+    #00c6da,
+    #00b9f6,
+    #1da7ff,
+    #7d9afb,
+    #b389e9,
+    #d879cd,
+    #f072b3,
+    #fe7196,
+    #ff777a,
+    #fb835f
+  );
 }
 
 h1 {
   text-align: center;
   color: #333;
+  margin-top: 20px;
   margin-bottom: 20px;
+  font-size: 2.5rem;
+  font-weight: bold;
 }
 
 form {
@@ -32,13 +50,17 @@ form {
 input[type="text"] {
   outline: none;
   text-decoration: none;
-  padding: 10px;
-  font-size: 16px;
-  margin-bottom: 20px;
+  padding: 25px;
+  font-size: 18px;
   width: 100%;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+  border: 1px solid #007bff;
 }
 
 input[type="text"]::placeholder {
@@ -54,7 +76,9 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  margin-top: 2rem;
+  margin-top: 45px;
+  width: 40%;
+  padding: 20px;
 }
 
 button:hover {
@@ -79,4 +103,14 @@ button:hover {
   border: 1px solid #ccc;
   padding: 10px;
   background-color: #fff;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
