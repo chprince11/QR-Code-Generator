@@ -84,6 +84,8 @@ input[type="text"]:focus {
 input[type="text"]::placeholder {
   color: #999;
   text-decoration: none;
+  letter-spacing: 5px;
+  font-size: 1rem;
 }
 
 button {
@@ -172,4 +174,10 @@ button:hover {
     max-width: 200px;
     max-height: 200px;
   }
+}
+
+#errorMessage {
+  color: red;
+  display: none;
+  margin-top: 10px;
 }
